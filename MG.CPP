@@ -17,7 +17,7 @@
 #define N_SHOTS 52                      // Number of screen shots to generate
 #define _MAX_WALL 9
 #define D_FI ( 2 * pi / N_SHOTS )
-#define D_MOVE ( 4 * 75 / N_SHOTS )
+#define D_MOVE ( 4 * 75 * 5 / N_SHOTS )
 
 HEAD head = { 0, 1, 0, 0, 0, 0, 0 } ;
 char& bits = head.bits ;
@@ -39,7 +39,7 @@ int f ;
 char* p ;
 extern int MAXX ;
 extern int MAXY ;
-double ASPECT = 1.2 ;
+double ASPECT = 1.0 ;
 double TETC = ( MAXX * 0.75 ) ;
 extern char* SCREEN ;
 char* wr_buf ;
@@ -341,14 +341,14 @@ int main ( int argc, char* argv[] )
       if( vmode == 1 )
        {
         bits = 8 ;
-        SHOT_SIZE = 64000 ;
+        SHOT_SIZE = MAXX * MAXY * 4 ;
         cout << "Rendering to memory in VGA 13h 320x200x256 mode:" << endl
              << "Shot:        Line: " ;
        }
        else
         {
          bits = 24 ;
-         SHOT_SIZE = 192000 ;
+         SHOT_SIZE = MAXX * MAXY * 4 * 3 ;
          cout << "Rendering to memory in VESA 10Fh 320x200x16.8M mode:" << endl
               << "Shot:        Line: " ;
         }

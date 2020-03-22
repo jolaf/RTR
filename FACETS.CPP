@@ -36,7 +36,7 @@ Wall::Wall( double _x, double _y, double _z, double _k, Color& _c, char _flag )
 
 Tetraeder::Tetraeder( void )
  {
-  l = 50.0 ; flag = 1 ; color = Color( 100, 100, 100 ) ;
+  l = 250.0 ; flag = 1 ; color = Color( 100, 100, 100 ) ;
   facets[ 0 ] = Facet(      0,      1,      0,         0, 1 ) ;
   facets[ 1 ] = Facet(   S2_3,  -_1_3, -S2_S3,         0, 1 ) ;
   facets[ 2 ] = Facet(   S2_3,  -_1_3,  S2_S3,         0, 1 ) ;

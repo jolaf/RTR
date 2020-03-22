@@ -34,7 +34,7 @@ class Tetraeder
   Tetraeder( void ) ;
   Tetraeder( double _x, double _y, double _z,
              double _ax, double _ay, double _az,
-             Color const& _c, char _flag = 1, double _l = 50.0 ) ;
+             Color const& _c, char _flag = 1, double _l = 250.0 ) ;
   void TurnX( double fi, double y = 0, double z = 0 ) ;
   void TurnY( double fi, double x = 0, double z = 0 ) ;
   void TurnZ( double fi, double x = 0, double y = 0 ) ;
