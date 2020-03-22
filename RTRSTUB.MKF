@@ -1,0 +1,28 @@
+#                                WATCOM
+#
+#
+
+Compiler = wpp.exe
+
+Compiler_Options= /ms /xst /of+ /s /4 /zff /zgf /oa /oe=100 /oi /ol+ /on /or /os /d0 /bt=dos /wx /fo=$@
+#Compiler_Options= /ms /xst /d2 /bt=dos /wx /fo=$@
+
+Linker_Options	= 
+#Linker_Options	= debug all
+
+System		= dos
+
+Exe_file	= rtrstub.exe
+
+Object_files	= rtrstub.obj
+
+
+####################
+## Makefile rules ##
+####################
+
+$(Exe_file): $(Object_files)
+	*wlink $(Linker_Options) system $(System) name $(Exe_file) file $(Object_files)
+
+.cpp.obj: .autodepend
+	*$(Compiler) $(Compiler_Options) $<

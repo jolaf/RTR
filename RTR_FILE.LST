@@ -1,0 +1,56 @@
+
+3D Objects Ray Tracing Renderer
+Copyright (c) 1996 by VMZ SoftSystems, Inc.
+Beta testing version
+
+FULL FILES LIST
+----------------
+
+Batch files are used to show the similar named shot files
+
+VESAFILM BAT
+VESASHOT BAT
+VGAFILM  BAT
+VGASHOT  BAT
+
+RTR      EXE - Main executable file
+
+These files are the program source files
+
+COLOR    CPP - Library of RGB colors treatment
+ERROR    CPP - Includes error messages
+FACETS   CPP - Includes classes etc. for planes, facets, tetraeders, etc.
+MG       CPP - Main source file
+MGLIB    CPP - Some auxiliary routines
+RTRSTUB  CPP - Executable stub program
+SHOW     CPP - Routines that provide rendered shots and films showing
+TRACE    CPP - Ray tracer itself and something around it
+VECTOR3D CPP - Class library of 3-dimensional ortohonal vectors
+VIDEO    CPP - Library of video modes, palettes, and other low-level routines
+
+These files are used as interface between source files
+
+COLOR    H
+ERROR    H  
+FACETS   H  
+HEADER   H  
+MGLIB    H  
+TRACE    H  
+VECTOR3D H  
+VIDEO    H  
+
+DOS4GW   EXE - DOS/4GW Protected Mode Run-time  Version 1.97
+               Copyright (c) Rational Systems, Inc. 1990-1994
+
+These are rendered shots and films
+
+VESAFILM SHT - Long 52 shots film for VESA TrueColor 320x200x16.8M mode
+VESASHOT SHT - Just one screen screen shot for VESA mode
+VGAFILM  SHT - Long 52 shots film for VGAr 320x200x256 mode
+VGASHOT  SHT - Just one screen screen shot for VGA mode
+
+APPLICAT DOC - Information about application and its command line format
+
+READ     ME! - Information about this program and its running and configuring
+
+RTR_FILE LST - This files list file

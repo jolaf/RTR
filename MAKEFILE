@@ -1,0 +1,27 @@
+#
+#
+#
+
+Compiler = wpp386.exe
+
+#Compiler_Options  = /mf /xst /3r /d2 /bt=dos /wx /fo=$@
+Compiler_Options = /mf /xst /4r /d0 /bt=dos /wx /fo=$@ /of+ /s /oa /oe=100 /oi /ol+ /on /or /ot
+
+#Linker_Options	= debug all option stub=rtrstub.exe option stack=16k
+Linker_Options	= option stub=rtrstub.exe option stack=16k
+
+System		= dos4g
+
+exe_file	= rtr.exe
+
+Object_files	= mg.obj, show.obj, vector3d.obj, color.obj, mglib.obj, trace.obj, facets.obj, video.obj, error.obj
+
+####################
+## Makefile rules ##
+####################
+
+$(Exe_file): $(Object_files)
+	*wlink system $(System) $(Linker_Options) name $(Exe_file) file $(Object_files)
+
+.cpp.obj: .autodepend
+	*$(Compiler) $(Compiler_Options) $<
