@@ -14,7 +14,7 @@
 #include "error.h"
 
 #define pi 3.1415926535
-#define N_SHOTS 52                      // Number of screen shots to generate
+#define N_SHOTS ( 52 * 4 )                      // Number of screen shots to generate
 #define _MAX_WALL 9
 #define D_FI ( 2 * pi / N_SHOTS )
 #define D_MOVE ( 4 * 75 * 5 / N_SHOTS )
