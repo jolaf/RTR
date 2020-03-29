@@ -14,7 +14,7 @@ System		= dos4g
 
 exe_file	= rtr.exe
 
-Object_files	= mg.obj, show.obj, vector3d.obj, color.obj, mglib.obj, trace.obj, facets.obj, video.obj, error.obj
+Object_files	= mg.obj, vector3d.obj, color.obj, mglib.obj, trace.obj, facets.obj, video.obj, error.obj
 
 ####################
 ## Makefile rules ##

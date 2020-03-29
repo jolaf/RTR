@@ -25,7 +25,6 @@ extern Vector light ;
 extern Color lightcolor ;
 extern Color backcolor ;
 extern long& count ;
-extern char mem ;
 extern rccoord text_pos ;
 
 extern void setpixel( int x, int y, Color const& c ) ;
@@ -224,13 +223,10 @@ void Shot( void )
     CheckKbd() ;
     for( x = -MAXX ; x < MAXX ; x ++ )
      Trace( x, y ) ;
-    if( mem )
-     {
-      text_pos = GetTextPosition() ;
-      text_pos.col = 20 ;
-      SetTextPosition( text_pos ) ;
-      cout << ( MAXY - y + 1 ) ;
-     }
+    text_pos = GetTextPosition() ;
+    text_pos.col = 20 ;
+    SetTextPosition( text_pos ) ;
+    cout << ( MAXY - y + 1 ) ;
    }
   WriteShot() ;
  }

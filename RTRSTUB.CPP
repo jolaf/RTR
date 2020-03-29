@@ -60,8 +60,8 @@ int main( int argc, char* argv[] ) throw( errorcode )
   
   cout << endl
        << "3D Objects Ray Tracing Renderer" << endl
-       << "Copyright (c) 1996 by VMZ SoftSystems, Inc." << endl
-       << "Beta testing version" << endl ;
+       << "Copyright (c) 1996-2020 by VMZ SoftSystems, Inc." << endl
+       << "Modernized historical version" << endl << endl;
   strupr( argv[ 0 ] ) ;
   try
    {

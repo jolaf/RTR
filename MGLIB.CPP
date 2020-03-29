@@ -14,54 +14,15 @@ extern char text_buf[] ;
 extern rccoord text_pos ;
 extern int TEXT_SCREEN ;
 extern int TEXT_SIZE ;
-extern char mem ;
-extern char show ;
-extern int lines_bank ;
-extern char& bits ;
-extern char quiet ;
 
-extern void putpixel( int x, int y, int color ) ;
-extern int  getpixel( int x, int y ) ;
-extern void SetBank( int n ) ;
-extern void TextMode( void ) ;
-
-inline void digit( int x, int y, char c )
- {
-  static char digits[ 10 ][ 5 ] = { { 15,  9,  9,  9, 15 },
-       {  1, 1,  1, 1, 1 }, { 15, 1, 15, 8, 15 }, { 15, 1,  7, 1, 15 },
-       {  9, 9, 15, 1, 1 }, { 15, 8, 15, 1, 15 }, { 15, 8, 15, 9, 15 },
-       { 15, 1,  1, 1, 1 }, { 15, 9, 15, 9, 15 }, { 15, 9, 15, 1, 15 } } ;
-  int i, j ;
-  for( i = 0 ; i < 4 ; i ++ )
-   for( j = 0 ; j < 5 ; j ++ )
-    if( ( digits[ c ][ j ] >> ( 3 - i ) ) & 1 )
-     putpixel( x + i, y - j, 0xffffffff ^ getpixel( x + i, y - j ) ) ;
- }
- 
 void Number( void )
  {
-  if( mem )
-   {
-    rccoord pos = GetTextPosition() ;
-    pos.col = 7 ; SetTextPosition( pos ) ;
-    cout << count + 1 ;
-    pos.col = 20 ; SetTextPosition( pos ) ;
-    cout << "0  " ;
-    pos.col = 21 ; SetTextPosition( pos ) ;
-    return ;
-   }
-  int i = count + 1 ;
-  int c = 0 ;
-  char m ;
-  if( bits == 24 ) SetBank( ( MAXY + MAXY - 7 ) / lines_bank ) ;
-  do
-   {
-    m = ( char ) ( i % 10 ) ;
-    i = i / 10 ;
-    c ++ ;
-    digit( MAXX - 1 - c * 6, 7 - MAXY, m ) ;
-   }
-  while( i > 0 ) ;
+  rccoord pos = GetTextPosition() ;
+  pos.col = 7 ; SetTextPosition( pos ) ;
+  cout << count + 1 ;
+  pos.col = 20 ; SetTextPosition( pos ) ;
+  cout << "0   " ;
+  pos.col = 21 ; SetTextPosition( pos ) ;
  }
 
 void CheckKbd( void ) 
@@ -71,13 +32,9 @@ void CheckKbd( void )
    if( getch() == 27 ) flag = 1 ;
   if( flag )
    {
-    TextMode() ;
-    if( !quiet )
-     {
-      if( mem ) cout << endl ;
-      cout << "Terminated by ESC pressing" << endl
-           << "Shots written: " << count << endl ;
-     }
+    cout << endl << endl ;
+    cout << "Terminated by ESC pressing" << endl
+         << "Shots written: " << count << endl ;
     close( f ) ;
     if( count == 0 ) unlink( fname ) ;
     exit( 1 ) ;
@@ -130,11 +87,6 @@ int SwitchSymbol( char c )
 
 void Successful( void )
  {
-  if( mem == 0 ) TextMode() ;
-  if( !quiet )
-   {
-    if( mem ) cout << endl ;
-    cout << "No errors detected" << endl ;
-   }
+  cout << "No errors detected" << endl ;
   exit( 0 ) ;
  }

@@ -4,11 +4,11 @@
 struct HEAD
  {
   char bits ;
-  char rle ;
-  char mode ;
-  char dir ;
+  char __rle ;
+  char __mode ;
+  char __dir ;
   long count ;
-  long start ;
+  long __start ;
   long __reserved ;
  } ;
 
