@@ -81,14 +81,13 @@ int main( int argc, char* argv[] ) throw( errorcode )
    }
   catch( errorcode n )
    {
-    cout << endl << "*** FATAL *** " << errmes[ n ] ;
+    cout << "*** FATAL *** " << errmes[ n ] ;
     if( n == RTRER_DOS4GWERROR ) cout << strerror( errno ) ;
-    cout << '.' << endl ;
     return n ;
    }
   catch( ... )
    {
-    cout << endl << "*** FATAL *** Unhandled exception: report to VMZ." << endl ;
+    cout << "*** FATAL *** Unhandled exception: report to VMZ." << endl ;
     return -1 ;
    }
  }
