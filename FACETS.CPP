@@ -7,7 +7,6 @@
 #define MAX_DOUBLE 1.7e308		// Very big number
 #define MIN_DOUBLE ( - 1.7e308 )	// Very small number
 
-
 Facet::Facet( double _x, double _y, double _z, double _k, char _flag )
  {
   k = _k ; flag = _flag ; exist = 0 ;
@@ -116,7 +115,7 @@ double Tetraeder::Cross( Vector const& r, Vector const& d, char* fn )
   double t ;
   double tn = MIN_DOUBLE ;
   double tf = MAX_DOUBLE ;
-  char min = -1 ;
+  char min = 255 ;
   if( flag == 0 ) return MIN_DOUBLE ;
   for( char i = 0 ; i < 4 ; i ++ )
    {
@@ -133,7 +132,7 @@ double Tetraeder::Cross( Vector const& r, Vector const& d, char* fn )
       if( t < tf ) tf = t ;
     if( tn > tf ) return MIN_DOUBLE ;
    }
-  if( min == -1 ) return MIN_DOUBLE ;
+  if( min == 255 ) return MIN_DOUBLE ;
   facets[ min ].exist = 1 ;
   if( fn != NULL ) *fn = min ;
   return tn ;
