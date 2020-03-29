@@ -5,15 +5,9 @@
 #include <io.h>
 #include "video.h"
 
-extern int MAXX ;
-extern int MAXY ;
 extern int f ;
 extern char* fname ;
 extern long& count ;
-extern char text_buf[] ;
-extern rccoord text_pos ;
-extern int TEXT_SCREEN ;
-extern int TEXT_SIZE ;
 
 void Number( void )
  {
@@ -78,11 +72,6 @@ void PrintHelp( void )
        << "  - c, t, p : To select viewing mode instead of one written in the file." << endl
        << "  - f, b    : To view film forward or backward." << endl ;
   exit( 0 ) ;
- }
-
-int SwitchSymbol( char c )
- {
-  return ( c == '/' || c == '\\' || c == '+' || c == '-' ) ;
  }
 
 void Successful( void )

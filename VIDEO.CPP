@@ -5,7 +5,6 @@
 #include "video.h"
 
 rccoord text_pos ; 
-unsigned short bytes_line = 0 ;
 
 rccoord GetTextPosition( void )
  {

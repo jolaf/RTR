@@ -26,8 +26,7 @@ Vector light ;
 int MAX_WALL = _MAX_WALL ;
 Wall walls[ _MAX_WALL ] ;
 Tetraeder icos[ 20 ] ;
-char* fname = "MG.SHT" ;
-extern int MAX_PAL ;
+char* fname ;
 int f ;
 char* p ;
 int MAXX = 800 ;
@@ -36,9 +35,8 @@ int SHOT_SIZE = MAXX * MAXY * 4 * 3;
 double ASPECT = 1.0 ;
 double TETC = ( MAXX * 0.75 ) ;
 char* SCREEN = NULL ;
-char* wr_buf ;
 
-void setpixel( int x, int y, Color const& color )
+void setpixel( int _x, int _y, Color const& color )
  {
   * p ++ = ( char ) color.b ;
   * p ++ = ( char ) color.g ;
@@ -65,14 +63,6 @@ int main ( int argc, char* argv[] )
   double fi ;
   double lr ;
   double mv ;
-  char chvid = 0 ;
-  char chmode = 0 ;
-  char chdir = 0 ;
-  char charc = 0 ;
-  char chrend = 0 ;
-  char vmode = 0 ;
-  for( i = 1 ; i < argc ; i ++ )
-   strlwr( argv[ i ] ) ;
   try
    {
     if( argc < 2 ) 
