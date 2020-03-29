@@ -4,10 +4,8 @@
 
 Compiler = wpp386.exe
 
-#Compiler_Options  = /mf /xst /3r /d2 /bt=dos /wx /fo=$@
-Compiler_Options = /mf /xst /4r /d0 /bt=dos /wx /fo=$@ /of+ /s /oa /oe=100 /oi /ol+ /on /or /ot
+Compiler_Options = /mf /xst /5r /d0 /bt=dos /wx /s /oa /oe=100 /oi /ol+ /om /oo /op /or /ot /ou
 
-#Linker_Options	= debug all option stub=rtrstub.exe option stack=16k
 Linker_Options	= option stub=rtrstub.exe option stack=16k
 
 System		= dos4g

@@ -4,11 +4,9 @@
 
 Compiler = wpp.exe
 
-Compiler_Options= /ms /xst /of+ /s /4 /zff /zgf /oa /oe=100 /oi /ol+ /on /or /os /d0 /bt=dos /wx /fo=$@
-#Compiler_Options= /ms /xst /d2 /bt=dos /wx /fo=$@
+Compiler_Options = /ms /xst /5 /d0 /bt=dos /wx /s /oa /oe=100 /oi /ol+ /om /oo /op /or /ot /ou
 
 Linker_Options	= 
-#Linker_Options	= debug all
 
 System		= dos
 
