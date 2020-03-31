@@ -1,5 +1,7 @@
 # RTR
-My student [CGI](https://en.wikipedia.org/wiki/Computer-generated_imagery) project from 1996 that I've recently discovered in my archives. It turns out it is the only reasonable piece of code I have ever written on C++.
+My student [CGI](https://en.wikipedia.org/wiki/Computer-generated_imagery) project from 1996 that I've recently discovered in my archives.
+
+It turns out it is the only reasonable piece of code I've ever written on C++.
 
 The code implements pure, non-optimized [ray tracing](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) with lighting and shadows.
 
@@ -7,7 +9,7 @@ The code is pure C++ and is **NOT** using any 3-rd party libraries, graphics eng
 
 The code is compiled using [Watcom C++](https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B) with [DOS/4GW](https://en.wikipedia.org/wiki/DOS/4G) to be run under [DOS](https://en.wikipedia.org/wiki/DOS) operating system.
 
-The scene contains 9 fixed infinite planes, 20 moving tetrahedrons and a single moving point light source.
+The scene contains 9 fixed [infinite planes](https://en.wikipedia.org/wiki/Infinite_plane), 20 moving [tetrahedrons](https://en.wikipedia.org/wiki/Tetrahedron) and a single moving [point light source](https://en.wikipedia.org/wiki/Point_light_source).
 
 The animation originally contained 52 frames arranged for a looped playback, for the modern version it was modified for 208 frames for smoother playback.
 
