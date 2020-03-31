@@ -1,5 +1,5 @@
 # RTR
-My student CGI project from 1996 that I've recently discovered in my archive.
+My student CGI project from 1996 that I've recently discovered in my archives.
 
 ## Historical version
 
@@ -13,7 +13,8 @@ The [`master`](https://github.com/jolaf/RTR) branch contains recently updated co
 
 In particular, the following things were removed: `Show` mode, on-screen rendering, 8-bit grayscale mode, custom rendering modes, RLE data format, command line options, all obsolete code. The modern version only accepts a single parameter – output file name, and all it's doing is rendering a complete 208-frame 1600x1200 scene in 24-bit color mode.
 
-The output `.sht` file then can be converted to APNG with [`Convert.py`](https://github.com/jolaf/RTR/blob/master/Convert.py) and to MP4 with [`Convert.cmd`](https://github.com/jolaf/RTR/blob/master/Convert.cmd), which produces two files, [`RTR-H264.mp4`](https://raw.githubusercontent.com/jolaf/RTR/master/RTR-H264.mp4) and [`RTR-H265.mp4`](https://raw.githubusercontent.com/jolaf/RTR/master/RTR-H265.mp4). The latter is lossless, but is not supported everywhere. The former is lossy because of `4:2:0` color encoding, and contains visible [banding](https://en.wikipedia.org/wiki/Colour_banding), but is widely supported. Lossless `4:4:4` encoding for H.264 is unfortunately not supported by most players.
+The output `.sht` file then can be converted to APNG with [`Convert.py`](https://github.com/jolaf/RTR/blob/master/Convert.py) and then to MP4 with [`Convert.cmd`](https://github.com/jolaf/RTR/blob/master/Convert.cmd), which produces two files, [`RTR-H264.mp4`](https://raw.githubusercontent.com/jolaf/RTR/master/RTR-H264.mp4) and [`RTR-H265.mp4`](https://raw.githubusercontent.com/jolaf/RTR/master/RTR-H265.mp4). The latter is lossless, but is not supported everywhere. The former is lossy because of `4:2:0` color encoding, and contains visible [banding](https://en.wikipedia.org/wiki/Colour_banding), but is widely supported. Lossless `4:4:4` encoding for H.264 is unfortunately not supported by most players.
 
 Full-scale APNG is too large to commit, so here's a single frame rendering, use `*.mp4` links above for full scale animation:
+
 ![Modern rendering](https://raw.githubusercontent.com/jolaf/RTR/master/RTR.png)
